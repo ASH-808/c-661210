@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Command, BarChart3, ShoppingCart, Settings, GraduationCap, FlaskConical, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,26 +6,46 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import ShinyText from "@/components/ui/shiny-text";
-
 const Index = () => {
   const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    initial: {
+      opacity: 0,
+      y: 60
+    },
+    animate: {
+      opacity: 1,
+      y: 0
+    },
+    transition: {
+      duration: 0.6
+    }
   };
-
   const fadeInLeft = {
-    initial: { opacity: 0, x: -60 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6 }
+    initial: {
+      opacity: 0,
+      x: -60
+    },
+    animate: {
+      opacity: 1,
+      x: 0
+    },
+    transition: {
+      duration: 0.6
+    }
   };
-
   const fadeInRight = {
-    initial: { opacity: 0, x: 60 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6 }
+    initial: {
+      opacity: 0,
+      x: 60
+    },
+    animate: {
+      opacity: 1,
+      x: 0
+    },
+    transition: {
+      duration: 0.6
+    }
   };
-
   const staggerContainer = {
     animate: {
       transition: {
@@ -34,26 +53,29 @@ const Index = () => {
       }
     }
   };
-
-  return (
-    <div className="min-h-screen bg-black text-foreground">
+  return <div className="min-h-screen bg-black text-foreground">
       <Navigation />
       
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative container px-4 pt-40 pb-20"
-      >
+      <motion.section initial={{
+      opacity: 0
+    }} animate={{
+      opacity: 1
+    }} transition={{
+      duration: 1
+    }} className="relative container px-4 pt-40 pb-20">
         <div className="absolute inset-0 -z-10 bg-[#0A0A0A]" />
         
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        scale: 0.8
+      }} animate={{
+        opacity: 1,
+        scale: 1
+      }} transition={{
+        delay: 0.2,
+        duration: 0.8
+      }} className="inline-block mb-4 px-4 py-1.5 rounded-full glass">
           <span className="text-sm font-medium">
             <Command className="w-4 h-4 inline-block mr-2" />
             Pioneering AI-driven solutions since 2017
@@ -61,40 +83,46 @@ const Index = () => {
         </motion.div>
         
         <div className="max-w-4xl relative z-10">
-          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
-            <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-gray-200 block"
-            >
+          <h1 className="text-5xl mb-4 tracking-tight text-left md:text-4xl font-medium">
+            <motion.span initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.3,
+            duration: 0.8
+          }} className="text-gray-200 block">
               <ShinyText text="Transforming Niche Industries" speed={3} />
             </motion.span>
             <br />
-            <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-white font-medium block"
-            >
+            <motion.span initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.5,
+            duration: 0.8
+          }} className="text-white font-medium block">
               <TextGenerateEffect words="with Intelligent Technology" />
             </motion.span>
           </h1>
           
-          <motion.p 
-            {...fadeInUp}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
-          >
+          <motion.p {...fadeInUp} transition={{
+          delay: 0.7,
+          duration: 0.6
+        }} className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left">
             At Codeproofs, we build technology that matters. Founded in 2017, we've grown from a visionary startup to a global innovator with offices across India and Southeast Asia.{" "}
             <span className="text-white">Our specialized products serve unique markets with AI-powered precision.</span>
           </motion.p>
           
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.9, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 items-start"
-          >
+          <motion.div {...fadeInUp} transition={{
+          delay: 0.9,
+          duration: 0.6
+        }} className="flex flex-col sm:flex-row gap-4 items-start">
             <Button size="lg" className="button-gradient">
               Explore Our Ecosystem
             </Button>
@@ -104,30 +132,28 @@ const Index = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 1.1, duration: 0.8 }}
-          className="relative mx-auto max-w-5xl mt-20"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 40,
+        scale: 0.9
+      }} animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1
+      }} transition={{
+        delay: 1.1,
+        duration: 0.8
+      }} className="relative mx-auto max-w-5xl mt-20">
           <div className="glass rounded-xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&h=600&fit=crop"
-              alt="Codeproofs Technology Dashboard"
-              className="w-full h-auto"
-            />
+            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&h=600&fit=crop" alt="Codeproofs Technology Dashboard" className="w-full h-auto" />
           </div>
         </motion.div>
       </motion.section>
 
       {/* About Section */}
-      <motion.section 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="container px-4 py-20 bg-black"
-      >
+      <motion.section initial="initial" whileInView="animate" viewport={{
+      once: true
+    }} variants={staggerContainer} className="container px-4 py-20 bg-black">
         <motion.div variants={fadeInUp} className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Building Technology That <span className="text-gradient">Matters</span>
@@ -143,13 +169,9 @@ const Index = () => {
       </motion.section>
 
       {/* Products Section */}
-      <motion.section 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="container px-4 py-24 bg-black"
-      >
+      <motion.section initial="initial" whileInView="animate" viewport={{
+      once: true
+    }} variants={staggerContainer} className="container px-4 py-24 bg-black">
         <motion.div variants={fadeInUp} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Solutions That Drive <span className="text-gradient">Industries Forward</span>
@@ -238,13 +260,9 @@ const Index = () => {
       </motion.section>
 
       {/* Subsidiaries Section */}
-      <motion.section 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="container px-4 py-24 bg-black"
-      >
+      <motion.section initial="initial" whileInView="animate" viewport={{
+      once: true
+    }} variants={staggerContainer} className="container px-4 py-24 bg-black">
         <motion.div variants={fadeInUp} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Expanding Our <span className="text-gradient">Vision</span>
@@ -308,13 +326,9 @@ const Index = () => {
       </motion.section>
 
       {/* Global Presence */}
-      <motion.section 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="container px-4 py-20 bg-black"
-      >
+      <motion.section initial="initial" whileInView="animate" viewport={{
+      once: true
+    }} variants={staggerContainer} className="container px-4 py-20 bg-black">
         <motion.div variants={fadeInUp} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Globally Connected, <span className="text-gradient">Locally Focused</span>
@@ -341,24 +355,22 @@ const Index = () => {
       </motion.section>
 
       {/* Testimonials */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="bg-black"
-      >
+      <motion.div initial={{
+      opacity: 0
+    }} whileInView={{
+      opacity: 1
+    }} viewport={{
+      once: true
+    }} transition={{
+      duration: 0.6
+    }} className="bg-black">
         <TestimonialsSection />
       </motion.div>
 
       {/* Contact Section */}
-      <motion.section 
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="container px-4 py-20 bg-black"
-      >
+      <motion.section initial="initial" whileInView="animate" viewport={{
+      once: true
+    }} variants={staggerContainer} className="container px-4 py-20 bg-black">
         <motion.div variants={fadeInUp} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's <span className="text-gradient">Connect</span>
@@ -393,13 +405,17 @@ const Index = () => {
       </motion.section>
 
       {/* CTA Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="container px-4 py-20 relative bg-black"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 40
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} viewport={{
+      once: true
+    }} transition={{
+      duration: 0.8
+    }} className="container px-4 py-20 relative bg-black">
         <div className="bg-[#0A0A0A]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Industry?
@@ -415,17 +431,17 @@ const Index = () => {
       </motion.section>
 
       {/* Footer */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="bg-black"
-      >
+      <motion.div initial={{
+      opacity: 0
+    }} whileInView={{
+      opacity: 1
+    }} viewport={{
+      once: true
+    }} transition={{
+      duration: 0.6
+    }} className="bg-black">
         <Footer />
       </motion.div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
