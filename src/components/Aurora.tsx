@@ -131,6 +131,8 @@ export default function Aurora(props: AuroraProps) {
     const ctn = ctnDom.current;
     if (!ctn) return;
 
+    console.log("Aurora: Initializing WebGL renderer");
+
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
@@ -148,6 +150,7 @@ export default function Aurora(props: AuroraProps) {
       if (!ctn) return;
       const width = ctn.offsetWidth;
       const height = ctn.offsetHeight;
+      console.log(`Aurora: Resizing to ${width}x${height}`);
       renderer.setSize(width, height);
       if (program) {
         program.uniforms.uResolution.value = [width, height];
@@ -165,6 +168,7 @@ export default function Aurora(props: AuroraProps) {
       return [c.r, c.g, c.b];
     });
 
+    console.log("Aurora: Creating shader program");
     program = new Program(gl, {
       vertex: VERT,
       fragment: FRAG,
@@ -179,6 +183,7 @@ export default function Aurora(props: AuroraProps) {
 
     const mesh = new Mesh(gl, { geometry, program });
     ctn.appendChild(gl.canvas);
+    console.log("Aurora: Canvas appended to container");
 
     let animateId = 0;
     const update = (t: number) => {
@@ -199,6 +204,7 @@ export default function Aurora(props: AuroraProps) {
     resize();
 
     return () => {
+      console.log("Aurora: Cleaning up");
       cancelAnimationFrame(animateId);
       window.removeEventListener("resize", resize);
       if (ctn && gl.canvas.parentNode === ctn) {

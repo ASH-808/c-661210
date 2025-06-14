@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Command, BarChart3, ShoppingCart, Settings, GraduationCap, FlaskConical, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,26 +55,26 @@ const Index = () => {
       }
     }
   };
-  return <div className="min-h-screen bg-black text-foreground">
+  return (
+    <div className="min-h-screen bg-black text-foreground">
       <Navigation />
       
       {/* Hero Section */}
-      <motion.section initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      duration: 1
-    }} className="relative container px-4 pt-40 pb-20 overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 1 }} 
+        className="relative container px-4 pt-40 pb-20 overflow-hidden min-h-screen"
+      >
         <div className="absolute inset-0 -z-20 bg-[#0A0A0A]" />
         
         {/* Aurora Background */}
-        <div className="absolute inset-0 -z-10 opacity-30">
+        <div className="absolute inset-0 -z-10 opacity-40">
           <Aurora 
             colorStops={["#5227FF", "#4ADE80", "#5227FF"]}
-            amplitude={1.2}
-            blend={0.7}
-            speed={0.8}
+            amplitude={1.5}
+            blend={0.8}
+            speed={1.2}
           />
         </div>
         
@@ -504,6 +503,8 @@ const Index = () => {
     }} className="bg-black">
         <Footer />
       </motion.div>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
