@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -6,40 +7,40 @@ import { Card } from "./ui/card";
 
 const testimonials = [
   {
-    name: "Michael Chen",
-    role: "Professional Trader",
+    name: "Rajesh Kumar",
+    role: "Racing Analytics Director",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content: "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind."
+    content: "GallopingPower has revolutionized how we approach race analysis. The AI-driven insights have significantly improved our prediction accuracy and strategic planning."
   },
   {
-    name: "Sarah Johnson",
-    role: "Crypto Fund Manager",
+    name: "Priya Sharma",
+    role: "Jockey Association Administrator",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
-    content: "CryptoTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours."
+    content: "TJAI ERP has streamlined our entire operation. What used to take hours of manual work is now automated, allowing us to focus on what truly matters - supporting our jockeys."
   },
   {
-    name: "David Wilson",
-    role: "Early Crypto Investor",
+    name: "Michael Thompson",
+    role: "Racing Equipment Supplier",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
-    content: "The customer support is exceptional, and the platform's intuitive design made getting started with crypto trading seamless. A game-changer for both beginners and pros."
+    content: "GallopingGear has transformed our distribution network. The platform's specialized focus on racing equipment has connected us with customers we never could have reached before."
   },
   {
-    name: "Emily Zhang",
-    role: "DeFi Developer",
+    name: "Dr. Sarah Chen",
+    role: "Technology Research Lead",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content: "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive."
+    content: "Webster Labs' innovative approach to R&D has been instrumental in advancing our industry's technological capabilities. Their collaborative model is truly exceptional."
   },
   {
-    name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    name: "Arjun Patel",
+    role: "Corporate Training Manager",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed."
+    content: "SkillonX's training programs have upskilled our entire development team. The practical, hands-on approach perfectly bridges the gap between theory and real-world application."
   },
   {
-    name: "Lisa Thompson",
-    role: "Portfolio Manager",
+    name: "Lisa Wong",
+    role: "Regional Operations Head",
     image: "https://avatars.githubusercontent.com/u/6789012?v=4",
-    content: "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management."
+    content: "Codeproofs' manpower solutions have been invaluable for our expansion across Southeast Asia. Their understanding of both technology and local markets is unmatched."
   }
 ];
 
@@ -54,9 +55,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-normal mb-4">Trusted by Traders</h2>
+          <h2 className="text-5xl font-normal mb-4">Trusted by <span className="text-gradient">Industry Leaders</span></h2>
           <p className="text-muted-foreground text-lg">
-            Join thousands of satisfied traders on CryptoTrade
+            See how Codeproofs is transforming industries across India and Southeast Asia
           </p>
         </motion.div>
 
