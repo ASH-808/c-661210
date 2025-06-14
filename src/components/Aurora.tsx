@@ -141,7 +141,7 @@ export default function Aurora(props: AuroraProps) {
     const renderer = new Renderer({
       canvas,
       alpha: true,
-      premultipliedAlpha: true,
+      premultipliedAlpha: false,
       antialias: true,
       powerPreference: 'high-performance'
     });
@@ -151,13 +151,14 @@ export default function Aurora(props: AuroraProps) {
     rendererGl.enable(rendererGl.BLEND);
     rendererGl.blendFunc(rendererGl.SRC_ALPHA, rendererGl.ONE_MINUS_SRC_ALPHA);
     
-    // Style the canvas
+    // Style the canvas with better positioning
     canvas.style.position = 'absolute';
     canvas.style.top = '0';
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '1';
 
     let program: Program;
 
@@ -176,7 +177,7 @@ export default function Aurora(props: AuroraProps) {
     }
     window.addEventListener("resize", resize);
 
-    // Create full-screen quad geometry
+    // Create full-screen quad geometry using correct OGL API
     const geometry = new Geometry(rendererGl, {
       position: { 
         size: 2, 
@@ -186,10 +187,10 @@ export default function Aurora(props: AuroraProps) {
           -1,  1,
            1,  1
         ])
+      },
+      index: {
+        data: new Uint16Array([0, 1, 2, 1, 3, 2])
       }
-    });
-    geometry.addIndex({
-      data: new Uint16Array([0, 1, 2, 1, 3, 2])
     });
 
     const colorStopsArray = colorStops.map((hex) => {
@@ -256,13 +257,14 @@ export default function Aurora(props: AuroraProps) {
   return (
     <div 
       ref={ctnDom} 
-      className="absolute inset-0 w-full h-full"
+      className="absolute inset-0 w-full h-full overflow-hidden"
       style={{ 
         width: '100%', 
         height: '100%',
         position: 'absolute',
         top: 0,
-        left: 0
+        left: 0,
+        zIndex: 1
       }} 
     />
   );
