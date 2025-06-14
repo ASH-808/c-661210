@@ -32,24 +32,24 @@ const Navigation = () => {
     <header
       className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
         isScrolled 
-          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-2xl" 
-          : "h-14 bg-[#1B1B1B] w-[95%] max-w-3xl"
+          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-4xl" 
+          : "h-14 bg-[#1B1B1B] w-[95%] max-w-5xl"
       }`}
     >
-      <div className="mx-auto h-full px-6">
+      <div className="mx-auto h-full px-4 lg:px-6">
         <nav className="flex items-center justify-between h-full">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <Command className="w-5 h-5 text-primary" />
             <span className="font-bold text-base">Codeproofs</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm transition-all duration-300 ${
+                className={`text-sm transition-all duration-300 whitespace-nowrap ${
                   location.pathname === item.href
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
@@ -58,15 +58,15 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Link to="/investor-relations">
-              <Button size="sm" className="button-gradient">
+            <Link to="/investor-relations" className="flex-shrink-0">
+              <Button size="sm" className="button-gradient text-xs px-3 py-2">
                 Investor Relations
               </Button>
             </Link>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="glass">

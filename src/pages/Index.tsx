@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight, Command, BarChart3, ShoppingCart, Settings, GraduationCap, FlaskConical, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,8 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import ShinyText from "@/components/ui/shiny-text";
+import Aurora from "@/components/Aurora";
+
 const Index = () => {
   const fadeInUp = {
     initial: {
@@ -63,8 +66,18 @@ const Index = () => {
       opacity: 1
     }} transition={{
       duration: 1
-    }} className="relative container px-4 pt-40 pb-20">
-        <div className="absolute inset-0 -z-10 bg-[#0A0A0A]" />
+    }} className="relative container px-4 pt-40 pb-20 overflow-hidden">
+        <div className="absolute inset-0 -z-20 bg-[#0A0A0A]" />
+        
+        {/* Aurora Background */}
+        <div className="absolute inset-0 -z-10 opacity-30">
+          <Aurora 
+            colorStops={["#5227FF", "#4ADE80", "#5227FF"]}
+            amplitude={1.2}
+            blend={0.7}
+            speed={0.8}
+          />
+        </div>
         
         <motion.div initial={{
         opacity: 0,
@@ -144,8 +157,9 @@ const Index = () => {
         delay: 1.1,
         duration: 0.8
       }} className="relative mx-auto max-w-5xl mt-20">
-          <div className="glass rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&h=600&fit=crop" alt="Codeproofs Technology Dashboard" className="w-full h-auto" />
+          <div className="glass rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&h=600&fit=crop" alt="Codeproofs Technology Dashboard" className="w-full h-auto relative z-10" />
           </div>
         </motion.div>
       </motion.section>
@@ -161,7 +175,7 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
             Our specialized products serve unique markets with AI-powered precision, while our subsidiaries expand our reach into education and research frontiers. With a global presence spanning India and Southeast Asia, we're transforming industries one solution at a time.
           </p>
-          <Button size="lg" variant="outline" className="glass">
+          <Button size="lg" variant="outline" className="glass hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
             Discover Our Story
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
@@ -182,79 +196,91 @@ const Index = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          <motion.div variants={fadeInLeft} className="glass rounded-xl p-8 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-3xl"><BarChart3 /></div>
-              <h3 className="text-2xl font-bold">GallopingPower</h3>
+          <motion.div variants={fadeInLeft} className="glass rounded-xl p-8 h-full flex flex-col group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-primary text-3xl"><BarChart3 /></div>
+                <h3 className="text-2xl font-bold">GallopingPower</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 flex-grow">AI-powered prediction engine revolutionizing horse racing analytics. Empowering enthusiasts and professionals with data-driven insights for informed decisions.</p>
+              <ul className="space-y-2 mb-8">
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Predictive Analytics
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Performance Tracking
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Condition Analysis
+                </li>
+              </ul>
+              <Button className="w-full button-gradient">
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
-            <p className="text-muted-foreground mb-6 flex-grow">AI-powered prediction engine revolutionizing horse racing analytics. Empowering enthusiasts and professionals with data-driven insights for informed decisions.</p>
-            <ul className="space-y-2 mb-8">
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Predictive Analytics
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Performance Tracking
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Condition Analysis
-              </li>
-            </ul>
-            <Button className="w-full button-gradient">
-              Learn More <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
           </motion.div>
           
-          <motion.div variants={fadeInUp} className="glass rounded-xl p-8 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-3xl"><ShoppingCart /></div>
-              <h3 className="text-2xl font-bold">GallopingGear</h3>
+          <motion.div variants={fadeInUp} className="glass rounded-xl p-8 h-full flex flex-col group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-primary text-3xl"><ShoppingCart /></div>
+                <h3 className="text-2xl font-bold">GallopingGear</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 flex-grow">The premier e-commerce destination for professional horse racing equipment. Quality gear curated for jockeys and racing institutions.</p>
+              <ul className="space-y-2 mb-8">
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Professional Racing Apparel
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Safety Equipment
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Training Accessories
+                </li>
+              </ul>
+              <Button className="w-full button-gradient">
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
-            <p className="text-muted-foreground mb-6 flex-grow">The premier e-commerce destination for professional horse racing equipment. Quality gear curated for jockeys and racing institutions.</p>
-            <ul className="space-y-2 mb-8">
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Professional Racing Apparel
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Safety Equipment
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Training Accessories
-              </li>
-            </ul>
-            <Button className="w-full button-gradient">
-              Learn More <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
           </motion.div>
           
-          <motion.div variants={fadeInRight} className="glass rounded-xl p-8 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-3xl"><Settings /></div>
-              <h3 className="text-2xl font-bold">TJAI ERP</h3>
+          <motion.div variants={fadeInRight} className="glass rounded-xl p-8 h-full flex flex-col group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-primary text-3xl"><Settings /></div>
+                <h3 className="text-2xl font-bold">TJAI ERP</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 flex-grow">Custom-built enterprise resource planning system for the Jockeys Association of India. Streamlining operations from training to race day.</p>
+              <ul className="space-y-2 mb-8">
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Jockey Profile Management
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Race Scheduling & Logistics
+                </li>
+                <li className="text-sm text-gray-300 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  Training Management
+                </li>
+              </ul>
+              <Button className="w-full button-gradient">
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
-            <p className="text-muted-foreground mb-6 flex-grow">Custom-built enterprise resource planning system for the Jockeys Association of India. Streamlining operations from training to race day.</p>
-            <ul className="space-y-2 mb-8">
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Jockey Profile Management
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Race Scheduling & Logistics
-              </li>
-              <li className="text-sm text-gray-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Training Management
-              </li>
-            </ul>
-            <Button className="w-full button-gradient">
-              Learn More <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
           </motion.div>
         </div>
       </motion.section>
@@ -273,54 +299,62 @@ const Index = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <motion.div variants={fadeInLeft} className="glass rounded-xl p-8 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-3xl"><GraduationCap /></div>
-              <h3 className="text-2xl font-bold">SkillonX</h3>
+          <motion.div variants={fadeInLeft} className="glass rounded-xl p-8 h-full flex flex-col group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-primary text-3xl"><GraduationCap /></div>
+                <h3 className="text-2xl font-bold">SkillonX</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 flex-grow">Shaping tomorrow's tech talent through specialized workshops, training programs, and skill development initiatives. Building competencies for the future.</p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Technical Workshops</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Professional Certification</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Corporate Training</span>
+                </div>
+              </div>
+              <Button variant="outline" className="w-full glass">
+                Explore Programs <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
-            <p className="text-muted-foreground mb-6 flex-grow">Shaping tomorrow's tech talent through specialized workshops, training programs, and skill development initiatives. Building competencies for the future.</p>
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Technical Workshops</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Professional Certification</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Corporate Training</span>
-              </div>
-            </div>
-            <Button variant="outline" className="w-full glass">
-              Explore Programs <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
           </motion.div>
           
-          <motion.div variants={fadeInRight} className="glass rounded-xl p-8 h-full flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-3xl"><FlaskConical /></div>
-              <h3 className="text-2xl font-bold">Webster Labs</h3>
+          <motion.div variants={fadeInRight} className="glass rounded-xl p-8 h-full flex flex-col group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-primary text-3xl"><FlaskConical /></div>
+                <h3 className="text-2xl font-bold">Webster Labs</h3>
+              </div>
+              <p className="text-muted-foreground mb-6 flex-grow">Our innovation hub where ideas transform into prototypes. Focused on research, development, and emerging technologies that will define tomorrow.</p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Advanced AI Applications</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Prototype Development</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="text-sm text-gray-300">Technology Forecasting</span>
+                </div>
+              </div>
+              <Button variant="outline" className="w-full glass">
+                Discover Innovations <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
-            <p className="text-muted-foreground mb-6 flex-grow">Our innovation hub where ideas transform into prototypes. Focused on research, development, and emerging technologies that will define tomorrow.</p>
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Advanced AI Applications</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Prototype Development</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-sm text-gray-300">Technology Forecasting</span>
-              </div>
-            </div>
-            <Button variant="outline" className="w-full glass">
-              Discover Innovations <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
           </motion.div>
         </div>
       </motion.section>
@@ -339,17 +373,29 @@ const Index = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <motion.div variants={fadeInLeft} className="glass rounded-xl p-6 text-center">
-            <h3 className="text-xl font-semibold mb-2">🇮🇳 India</h3>
-            <p className="text-muted-foreground">Headquarters in Bangalore, Development Center in Mysore</p>
+          <motion.div variants={fadeInLeft} className="glass rounded-xl p-6 text-center group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <h3 className="text-xl font-semibold mb-2">🇮🇳 India</h3>
+              <p className="text-muted-foreground">Headquarters in Bangalore, Development Center in Mysore</p>
+            </div>
           </motion.div>
-          <motion.div variants={fadeInUp} className="glass rounded-xl p-6 text-center">
-            <h3 className="text-xl font-semibold mb-2">🇲🇾 Malaysia</h3>
-            <p className="text-muted-foreground">Regional Office in Kuala Lumpur</p>
+          <motion.div variants={fadeInUp} className="glass rounded-xl p-6 text-center group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <h3 className="text-xl font-semibold mb-2">🇲🇾 Malaysia</h3>
+              <p className="text-muted-foreground">Regional Office in Kuala Lumpur</p>
+            </div>
           </motion.div>
-          <motion.div variants={fadeInRight} className="glass rounded-xl p-6 text-center">
-            <h3 className="text-xl font-semibold mb-2">🇮🇩 Indonesia</h3>
-            <p className="text-muted-foreground">Operations Hub in Jakarta</p>
+          <motion.div variants={fadeInRight} className="glass rounded-xl p-6 text-center group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <h3 className="text-xl font-semibold mb-2">🇮🇩 Indonesia</h3>
+              <p className="text-muted-foreground">Operations Hub in Jakarta</p>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -381,25 +427,37 @@ const Index = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <motion.div variants={fadeInLeft} className="glass rounded-xl p-6">
-            <Mail className="w-8 h-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-            <p className="text-muted-foreground mb-4">Get in touch for any inquiries</p>
-            <p className="text-primary">hello@codeproofs.com</p>
+          <motion.div variants={fadeInLeft} className="glass rounded-xl p-6 group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <Mail className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+              <p className="text-muted-foreground mb-4">Get in touch for any inquiries</p>
+              <p className="text-primary">hello@codeproofs.com</p>
+            </div>
           </motion.div>
           
-          <motion.div variants={fadeInUp} className="glass rounded-xl p-6">
-            <Phone className="w-8 h-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-            <p className="text-muted-foreground mb-4">Speak with our team directly</p>
-            <p className="text-primary">+91-XXXXXXXXXX</p>
+          <motion.div variants={fadeInUp} className="glass rounded-xl p-6 group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <Phone className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+              <p className="text-muted-foreground mb-4">Speak with our team directly</p>
+              <p className="text-primary">+91-XXXXXXXXXX</p>
+            </div>
           </motion.div>
           
-          <motion.div variants={fadeInRight} className="glass rounded-xl p-6">
-            <MapPin className="w-8 h-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
-            <p className="text-muted-foreground mb-4">Our headquarters in India</p>
-            <p className="text-primary">Bangalore, India</p>
+          <motion.div variants={fadeInRight} className="glass rounded-xl p-6 group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 border border-primary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10">
+              <MapPin className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
+              <p className="text-muted-foreground mb-4">Our headquarters in India</p>
+              <p className="text-primary">Bangalore, India</p>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -416,17 +474,21 @@ const Index = () => {
     }} transition={{
       duration: 0.8
     }} className="container px-4 py-20 relative bg-black">
-        <div className="bg-[#0A0A0A]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Industry?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss how our technologies can address your unique challenges and drive innovation in your sector.
-          </p>
-          <Button size="lg" className="button-gradient">
-            Start the Conversation
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+        <div className="bg-[#0A0A0A]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 text-center relative z-10 group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 border border-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Transform Your Industry?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Let's discuss how our technologies can address your unique challenges and drive innovation in your sector.
+            </p>
+            <Button size="lg" className="button-gradient">
+              Start the Conversation
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </motion.section>
 
